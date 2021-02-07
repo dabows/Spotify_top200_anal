@@ -7,14 +7,12 @@
 
 import pandas as pd
 
-
-def readCsv():
-    df = pd.read_csv('all_df.csv')
-    return df
+import squarify
+import matplotlib.pyplot as plt
 
 
 def countArtists():
-    df = readCsv()
+    df = pd.read_csv('./products/all_df.csv')
     
     arts = df['Artist'].tolist()
     streams = df['Streams'].tolist()
@@ -39,9 +37,13 @@ def countArtists():
     
     df_mgd = df_mgd.sort_values(by='Streams', ascending=False)
     #df_mgd = df_mgd.sort_values(by='Count', ascending=False)
-    print(df_mgd.head(50))
-    df_mgd.to_csv('artist_count.csv')
+    #print(df_mgd.head(50))
+    df_mgd.to_csv('./products/artist_count.csv')
 
+def aniGraph():
+    df = pd.read_csv('./products/artist_count.csv')
 
 if __name__ == '__main__':
-    countArtists()
+    #countArtists()
+
+    aniGraph()
