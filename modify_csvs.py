@@ -1,6 +1,6 @@
 
 ''' 
-Turns all the csvs into one large dataframe and pickles it
+Turns all the csvs into one large dataframe and saves it
 '''
 
 import os
